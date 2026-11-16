@@ -1,9 +1,10 @@
 $(function() { // Makes sure that your function is called once all the DOM elements of the page are ready to be used.
     
+    // Called function to update the name, happiness, and weight of our pet in our HTML
     // Initial update to render the first pet
     updateActivePetDisplay();
   
-    // Event listeners for action buttons
+    // When each button is clicked, it will "call" function for that button (functions are below)
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
@@ -17,10 +18,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       updatePetMessage("Switched to " + currentPet.name + "!");
     });
 
-    // ==========================================
-    // UNIQUE JQUERY METHODS DEMONSTRATION
-    // ==========================================
-    
+    // Unique JQuery Methods
+    // ---------------------
     // 1. .focus() method: Triggers when any button receives focus.
     $('button').focus(function() {
       $(this).css('outline', '3px solid #ffcc00');
@@ -32,9 +31,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     });
 });
 
-// ==========================================
-// OBJECT CONSTRUCTOR FOR MULTIPLE PETS
-// ==========================================
+// Object Constructor For Multiple Pets
+// ------------------------------------
 function Pet(name, weight, happiness, energy, imageUrl) {
   this.name = name;
   this.weight = weight;
@@ -50,15 +48,27 @@ function Pet(name, weight, happiness, energy, imageUrl) {
   };
 }
 
-// Instantiate multiple unique pet objects using the constructor
+// Ask the player for names using prompt() when the page loads
+var pet1Name = prompt("What would you like to name your first pet?", "Grimoire");
+var pet2Name = prompt("What would you like to name your second pet?", "Calpico");
+
+// Fallback to default names if the player cancels or leaves them blank
+if (!pet1Name) pet1Name = "Grimoire";
+if (!pet2Name) pet2Name = "Calpico";
+
+// Instantiate multiple unique pet objects using the player-provided names
 var pets = [
-  new Pet("Rover", 12, 10, 8, "https://images.unsplash.com/photo-1543466835-00a7907e9de1"),
-  new Pet("Luna", 9, 14, 15, "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8")
+  new Pet(pet1Name, 55, 10, 15, ""),
+  new Pet(pet2Name, 12, 16, 10, "")
 ];
 
 // Track the currently active pet
 var currentPetIndex = 0;
 var currentPet = pets[currentPetIndex];
+
+// Update the switch buttons in the HTML so they display the custom names chosen by the player
+$('.switch-pet-btn[data-index="0"]').text(pets[0].name);
+$('.switch-pet-btn[data-index="1"]').text(pets[1].name);
 
 function clickedTreatButton() {
   currentPet.happiness += 2;
@@ -68,6 +78,12 @@ function clickedTreatButton() {
 }
 
 function clickedPlayButton() {
+  // Check if the pet has enough energy to play
+  if (currentPet.energy <= 0) {
+    updatePetMessage(currentPet.name + " is too exhausted to play! Let them sleep first.");
+    return; // Stop the function here so stats don't change
+  }
+
   currentPet.happiness += 3;
   currentPet.weight -= 1;
   currentPet.energy -= 2;
@@ -76,6 +92,12 @@ function clickedPlayButton() {
 }
 
 function clickedExerciseButton() {
+  // Check if the pet has enough energy to exercise
+  if (currentPet.energy <= 0) {
+    updatePetMessage(currentPet.name + " has no energy left to exercise! They need a nap.");
+    return; // Stop the function here so stats don't change
+  }
+
   currentPet.happiness -= 1;
   currentPet.weight -= 2;
   currentPet.energy -= 3;
