@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 25px;
+  }
+  
+  main {
+    display: block;
+    height: 250px;
+  }
+  
+  header {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .pet-image {
+    height: 250px;
+    width: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .dashboard div {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .pet-image-container {
+    float: left;
+    padding: 10px;
+  }
+  
+  .dashboard {
+    float: left;
+    padding: 20px;
+  }
+
+  .pet-selector {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .switch-pet-btn {
+    padding: 4px 10px;
+    margin-right: 5px;
+    background-color: #404853;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .switch-pet-btn:hover {
+    background-color: #1e2835;
+  }
+
+  .notification-box {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f0f4f8;
+    border-left: 4px solid #1e2835;
+    border-radius: 4px;
+    max-width: 350px;
+  }
+
+  .pet-message {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .button-container {
+    margin-top: 15px;
+    clear: both;
+  }
+  
+  .button-container button {
+    width: 90px;
+    height: 35px;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    font-size: 14px;
+    background-color: #1e2835;
+    border: 1px solid #404853;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fafafa;
+  }
+
+  .button-container button:hover {
+    background-color: #2c3e50;
+  }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Giga Pet - Multiple Pets</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        This is your Giga Pet (Multi-Pet Edition)
+      </h1>
+    </header>
+
+    <main>
+      <section class="pet-image-container">
+        <!-- Dynamic pet image based on selected pet object -->
+        <img class="pet-image" src="" alt="Pet Image">
+      </section>
+      
+      <section class="dashboard">
+        <!-- Pet Selector to switch between multiple pets created with the constructor -->
+        <div class="pet-selector">
+          <span>Select Pet: </span>
+          <button class="switch-pet-btn" data-index="0">Rover</button>
+          <button class="switch-pet-btn" data-index="1">Luna</button>
+        </div>
+
+        <div>Name: <strong><span class="name"></span></strong></div>
+        <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
+        <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
+        <div>Energy: <strong><span class="energy"></span> battery level</strong></div>
+        
+        <!-- Visual notification message from the active pet -->
+        <div class="notification-box">
+          <p class="pet-message"><em>Your pet is ready to play!</em></p>
+        </div>
+
+        <div class="button-container">
+          <button class="treat-button">Treat</button>
+          <button class="play-button">Play</button>
+          <button class="exercise-button">Exercise</button>
+          <button class="sleep-button">Sleep</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+  </body>
+</html>
