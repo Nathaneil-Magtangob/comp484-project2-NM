@@ -20,12 +20,12 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     // Unique JQuery Methods
     // ---------------------
-    // 1. .focus() method: Triggers when any button receives focus.
+    // 1. .focus() : Triggers when any button receives focus.
     $('button').focus(function() {
       $(this).css('outline', '3px solid #ffcc00');
     });
 
-    // 2. .focusout() method: Triggers when any button loses focus.
+    // 2. .focusout() : Triggers when any button loses focus.
     $('button').focusout(function() {
       $(this).css('outline', 'none');
     });
@@ -40,7 +40,7 @@ function Pet(name, weight, happiness, energy, imageUrl) {
   this.energy = energy;
   this.imageUrl = imageUrl;
 
-  // Method to check and prevent stats from dropping below zero
+  // Check and prevent stats from dropping below zero
   this.validateStats = function() {
     if (this.weight < 0) {
       this.weight = 0;
@@ -54,7 +54,7 @@ function Pet(name, weight, happiness, energy, imageUrl) {
   };
 }
 
-// Ask the player for names using prompt() when the page loads
+// Ask player for names using prompt() when the page loads
 var pet1Name = prompt("What would you like to name your first pet?", "Grimoire");
 var pet2Name = prompt("What would you like to name your second pet?", "Calpico");
 
@@ -87,7 +87,7 @@ function clickedPlayButton() {
   // Check if the pet has enough energy to play
   if (currentPet.energy <= 0) {
     updatePetMessage(currentPet.name + " is too exhausted to play! Let them sleep first.");
-    return; // Stop the function here so stats don't change
+    return; // Stop the function so stats don't change
   }
 
   currentPet.happiness += 3;
@@ -101,7 +101,7 @@ function clickedExerciseButton() {
   // Check if the pet has enough energy to exercise
   if (currentPet.energy <= 0) {
     updatePetMessage(currentPet.name + " has no energy left to exercise! They need a nap.");
-    return; // Stop the function here so stats don't change
+    return; // Stop the function so stats don't change
   }
 
   currentPet.happiness -= 1;
