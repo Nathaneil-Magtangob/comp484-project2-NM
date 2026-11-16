@@ -42,9 +42,15 @@ function Pet(name, weight, happiness, energy, imageUrl) {
 
   // Method to check and prevent stats from dropping below zero
   this.validateStats = function() {
-    if (this.weight < 0) this.weight = 0;
-    if (this.happiness < 0) this.happiness = 0;
-    if (this.energy < 0) this.energy = 0;
+    if (this.weight < 0) {
+      this.weight = 0;
+    }
+    if (this.happiness < 0) {
+      this.happiness = 0;
+    }
+    if (this.energy < 0) {
+      this.energy = 0;
+    }
   };
 }
 
@@ -58,8 +64,8 @@ if (!pet2Name) pet2Name = "Calpico";
 
 // Instantiate multiple unique pet objects using the player-provided names
 var pets = [
-  new Pet(pet1Name, 55, 10, 15, ""),
-  new Pet(pet2Name, 12, 16, 10, "")
+  new Pet(pet1Name, 55, 10, 15, "hound.jpg"),
+  new Pet(pet2Name, 12, 16, 10, "hound.jpg")
 ];
 
 // Track the currently active pet
