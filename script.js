@@ -64,8 +64,8 @@ if (!pet2Name) pet2Name = "Calpico";
 
 // Instantiate multiple unique pet objects using the player-provided names
 var pets = [
-  new Pet(pet1Name, 55, 10, 15, "https://images.unsplash.com/photo-1543466835-00a7907e9de1"),
-  new Pet(pet2Name, 12, 16, 10, "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8")
+  new Pet(pet1Name, 55, 10, 15, "https://images.unsplash.com/photo-1763718205007-fb085a276026"),
+  new Pet(pet2Name, 12, 16, 10, "https://images.unsplash.com/photo-1561037404-61cd46aa615b")
 ];
 
 // Track the currently active pet
